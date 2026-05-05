@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpiceRush – Food Delivery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🌶️</span>
+      <span class="logo-text">SpiceRush</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#offers" class="nav-link">Offers</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search dishes..." id="searchInput"/>
+      </div>
+      <button class="cart-btn" id="cartBtn">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="login-btn">Login</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🚀 Free delivery on first order</div>
+      <h1>Fresh Food<br/><span class="hero-highlight">Delivered Fast</span></h1>
+      <p>Authentic South Indian tiffins, refreshing beverages, and aromatic rice items – straight from the kitchen to your door in 30 minutes.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <div class="hero-stats">
+          <div class="stat"><strong>500+</strong><span>Dishes</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>30min</strong><span>Delivery</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>4.9★</strong><span>Rating</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-blob"></div>
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=700&q=80" alt="Delicious Food" class="hero-img"/>
+      <div class="floating-card card1">
+        <span>🍛</span> Biryani just arrived!
+      </div>
+      <div class="floating-card card2">
+        <span>⏱️</span> 28 min away
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY TABS -->
+  <section class="categories" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our <span>Menu</span></h2>
+        <p>Handcrafted with love, served with soul</p>
+      </div>
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-cat="all"><i class="fas fa-th-large"></i> All</button>
+        <button class="cat-tab" data-cat="tiffins"><i class="fas fa-egg"></i> Tiffins</button>
+        <button class="cat-tab" data-cat="rice"><i class="fas fa-bowl-rice"></i> Rice Items</button>
+        <button class="cat-tab" data-cat="beverages"><i class="fas fa-glass-water"></i> Beverages</button>
+        <button class="cat-tab" data-cat="snacks"><i class="fas fa-cookie"></i> Snacks</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD GRID -->
+  <section class="food-section">
+    <div class="container">
+      <div class="food-grid" id="foodGrid">
+        <!-- Cards injected by JS -->
+      </div>
+      <div class="no-results hidden" id="noResults">
+        <i class="fas fa-search"></i>
+        <p>No items found. Try a different search.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS BANNER -->
+  <section class="offers" id="offers">
+    <div class="container">
+      <div class="offer-grid">
+        <div class="offer-card offer-card--main">
+          <div class="offer-text">
+            <span class="offer-tag">Limited Time</span>
+            <h3>Get 20% OFF on all Tiffins</h3>
+            <p>Use code <strong>TIFFIN20</strong> at checkout</p>
+            <button class="btn-primary">Grab Deal</button>
+          </div>
+          <div class="offer-img">🍽️</div>
+        </div>
+        <div class="offer-card offer-card--sec">
+          <div class="offer-text">
+            <span class="offer-tag">Today Only</span>
+            <h3>Buy 2 Rice Items, Get 1 Free</h3>
+            <p>Auto applied on cart</p>
+          </div>
+          <div class="offer-img">🍚</div>
+        </div>
+        <div class="offer-card offer-card--ter">
+          <div class="offer-text">
+            <span class="offer-tag">Always On</span>
+            <h3>Free Beverage with every ₹300+ order</h3>
+            <p>While stocks last</p>
+          </div>
+          <div class="offer-img">🥤</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="About" class="about-img"/>
+      <div class="about-text">
+        <h2>Why <span>SpiceRush?</span></h2>
+        <p>We partner with the best home chefs and local restaurants to bring authentic regional flavors to your table every day.</p>
+        <ul class="about-list">
+          <li><i class="fas fa-check-circle"></i> Fresh, hygienic, and home-style food</li>
+          <li><i class="fas fa-check-circle"></i> Delivery in under 30 minutes</li>
+          <li><i class="fas fa-check-circle"></i> Real-time order tracking</li>
+          <li><i class="fas fa-check-circle"></i> No hidden charges – what you see is what you pay</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">🌶️ SpiceRush</span>
+        <p>Bringing the taste of home to your doorstep.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Track Order</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SpiceRush. All rights reserved. Made with ❤️ in India.</p>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+      <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Your cart is empty!</p>
+        <span>Add some delicious items</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span><span id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Delivery</span><span class="free-delivery">FREE</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span><span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <!-- MODAL: ORDER SUCCESS -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon">🎉</div>
+      <h3>Order Placed!</h3>
+      <p>Your order has been placed successfully and will arrive in <strong>28–35 minutes</strong>.</p>
+      <button class="btn-primary" id="modalClose">Track Order</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
